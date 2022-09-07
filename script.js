@@ -4,7 +4,7 @@ const textContainer = document.querySelector("#textContainer");
 // sending the text to /api endpoint and fetching the last element from the array
 const sendData = async (data) => {
   try {
-    await fetch("http://global-clipboard.onrender.com/api", {
+    await fetch("https://global-clipboard.onrender.com/api", {
       method: "post",
       headers: {
         "Content-type": "application/json",
