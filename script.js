@@ -1,6 +1,8 @@
 const text = document.getElementById("text");
 const form = document.querySelector("#submit");
 const textContainer = document.querySelector("#textContainer");
+const paste = document.querySelector("#paste-btn");
+
 // sending the text to /api endpoint and fetching the last element from the array
 const sendData = async (data) => {
   try {
@@ -80,4 +82,8 @@ form.addEventListener("click", (e) => {
 });
 
 // on pressing the the copy button
-
+paste.addEventListener("click", async (e) => {
+  const textToPaste = await navigator.clipboard.readText();
+  console.log(navigator.clipboard.readText());
+  text.value = textToPaste;
+});
