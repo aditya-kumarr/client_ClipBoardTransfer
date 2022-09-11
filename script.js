@@ -1,5 +1,5 @@
 const text = document.getElementById("text");
-const form = document.querySelector("form");
+const form = document.querySelector("#submit");
 const textContainer = document.querySelector("#textContainer");
 // sending the text to /api endpoint and fetching the last element from the array
 const sendData = async (data) => {
@@ -75,7 +75,9 @@ const createElement = (content) => {
 };
 
 // onsubmitting the form the text is sent to /api endpoint
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+form.addEventListener("click", (e) => {
   sendData(text.value);
 });
+
+// on pressing the the copy button
+
